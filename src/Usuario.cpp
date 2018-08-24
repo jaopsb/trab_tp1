@@ -17,9 +17,34 @@ Usuario::Usuario(string n, int id, string s)
     }
 }
 
+Usuario::Usuario(string n, string s)
+{
+    if(Usuario::set_nome(n))
+    {
+        if(Usuario::valida_senha(s))
+        {
+            Usuario::set_senha(s);
+        }
+    }
+}
+
 Usuario::~Usuario()
 {
     //dtor
+}
+
+string Usuario::get_senha()
+{
+    return senha;
+}
+string Usuario::get_nome()
+{
+    return nome;
+}
+
+int Usuario::get_identificador()
+{
+    return identificador;
 }
 
 bool Usuario::set_senha(string s) throw()

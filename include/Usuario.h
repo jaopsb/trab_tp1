@@ -8,6 +8,7 @@ class Usuario
 {
     public:
         Usuario(string,int ,string);
+        Usuario(string,string);
         virtual ~Usuario();
         //metodos set
         bool set_identificador(int );
@@ -21,8 +22,8 @@ class Usuario
         bool valida_senha(string );
 
         string greeting();
+        string get_senha();//nao eh bom,mas como eh apenas didatico pode
     protected:
-
     private:
         string nome;
         int identificador;

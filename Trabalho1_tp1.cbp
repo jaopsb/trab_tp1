@@ -40,12 +40,14 @@
 		<Unit filename="include/Acomodacao.h" />
 		<Unit filename="include/Banco_hotel.h" />
 		<Unit filename="include/Data.h" />
+		<Unit filename="include/Retorno.h" />
 		<Unit filename="include/Usuario.h" />
 		<Unit filename="include/sqlite3.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Acomodacao.cpp" />
 		<Unit filename="src/Banco_hotel.cpp" />
 		<Unit filename="src/Data.cpp" />
+		<Unit filename="src/Retorno.cpp" />
 		<Unit filename="src/Usuario.cpp" />
 		<Unit filename="src/sqlite3.c">
 			<Option compilerVar="CC" />
