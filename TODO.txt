@@ -1,0 +1,8 @@
+-Criar funcao de cadastro de usuario:
+	Atentar a caracteristica de falta de chave estrangeira no banco sqlite (verificar se isso eh mesmo).
+	No cadastro de usuario deve verificar se tem a conta e o cartao para guardar tambem /* criar funcao para cadastrar mais tarde*/. O fluxo deve ser:
+	usuario -> verifica os dados essenciais -> guarda conta e cartoes (se tiver) -> sucesso!
+	No momento de cadastro do usuario nao deve haver a necessidade de cadastrar nem uma acomodacao nem reserva
+
+-DEVE SER FEITO PRIMEIRO O CADASTRO DE ACOMODACOES OU DE USUARIO???
+

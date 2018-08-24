@@ -1,0 +1,40 @@
+ /* string nome, senha;
+    int identificador;
+    bool fim_senha = false;
+    Usuario *usu1;
+
+    cout << "digite seus dados ->" << endl;
+
+    cout << "Nome :";
+    getline(cin,nome);
+
+    cout << "identificador:";
+    cin >> identificador;
+    getwchar();
+
+    do{
+        try{
+            cout << "senha:";
+            getline(cin,senha);
+
+            if (valida_senha(senha))
+                fim_senha = true;
+
+        }catch(const char* msg){
+            cout << msg << endl;
+        }
+    }while (!fim_senha);
+
+    try
+    {
+        usu1 = new Usuario{nome,identificador,senha};
+
+        cout << usu1->greeting() << endl;
+
+    }catch(const char* message)
+    {
+        cout << "Erro : " << message << endl;
+    }
+
+    delete usu1;*/
+
