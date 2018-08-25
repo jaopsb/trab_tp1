@@ -6,9 +6,9 @@
 
 using namespace std;
 
-Usuario::Usuario(string n, int id, string s)
+Usuario::Usuario(string n, string l, string s)
 {
-    if(Usuario::set_identificador(id) && Usuario::set_nome(n))
+    if(Usuario::set_nome(n) && Usuario::set_login(l))
     {
         if(Usuario::valida_senha(s))
         {
@@ -28,6 +28,13 @@ Usuario::Usuario(string n, string s)
     }
 }
 
+Usuario::Usuario()
+{
+    nome  = " ";
+    login = " ";
+    senha = " ";
+}
+
 Usuario::~Usuario()
 {
     //dtor
@@ -41,13 +48,17 @@ string Usuario::get_nome()
 {
     return nome;
 }
+string Usuario::get_login()
+{
+    return login;
+}
 
 int Usuario::get_identificador()
 {
     return identificador;
 }
 
-bool Usuario::set_senha(string s) throw()
+bool Usuario::set_senha(string s)
 {
     bool resultado = false;
 
@@ -93,6 +104,23 @@ bool Usuario::set_nome(string n)
 
     return resultado;
 }
+
+bool Usuario::set_login(string l)
+{
+    bool resultado;
+
+    if(!l.empty())
+    {
+        login = l;
+        resultado = true;
+    }else
+    {
+        resultado = true;
+    }
+
+    return resultado;
+}
+
 /** Usuario::valida_senha()
     @param string s
     @author joaop
@@ -136,6 +164,11 @@ bool Usuario::valida_senha(string s)
         throw "Senha deve conter pelo menos uma letra maiuscula!";
 
     return resultado;
+}
+
+bool Usuario::empty()
+{
+    return nome == " " && login == " " && senha == "";
 }
 
 string Usuario::greeting()

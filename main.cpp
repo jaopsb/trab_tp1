@@ -49,18 +49,20 @@ Retorno *valida_senha(string s)
 void registrar()
 {
     Banco_hotel banco(" ");
-    string nome_in, senha_in;
+    string nome_in,login_in, senha_in;
     char resp_in;
     Retorno *retorno = new Retorno();
-
-    cout << "Registro:" << endl;
-    cout << "Nome:";
+    cout << "+--------------------+" << endl;
+    cout << "|Registro:" << endl;
+    cout << "|Nome:";
     getline(cin, nome_in);
+    cout << "|Login:";
+    getline(cin, login_in);
 
     try
     {
         do{
-            cout << "Senha:";
+            cout << "|Senha:";
             getline(cin,senha_in);
 
             retorno = valida_senha(senha_in);
@@ -72,17 +74,21 @@ void registrar()
     }
     catch (char *msg)
     {
-        cout << msg;
+        cout << msg << endl;;
     }
 
-    cout << "Confirmar?" << endl;
-    cout << "Nome: " << nome_in << ", Senha: " << senha_in << endl;
-    cout << "(S/N)";
+    cout << "+--------------------------------+" << endl;
+    cout << "|Confirmar?" << endl;
+    cout << "|Nome: " << nome_in << endl;
+    cout << "|Login: " << login_in << endl;
+    cout << "|Senha: " << senha_in << endl;
+    cout << "+--------------------------------+" << endl;
+    cout << "|(S/N)|" << endl;
     cin >> resp_in;
 
     if (resp_in == 's' || resp_in == 'S')
     {
-        Usuario u(nome_in, senha_in);
+        Usuario u(nome_in, login_in,senha_in);
 
         if(banco.cadastra_usuario(u))
             cout << "Cadastro feito com sucesso!" << endl;
@@ -91,8 +97,30 @@ void registrar()
     delete retorno;
 }
 
-void login(){
-    cout << "aaah safado... jaja"<< endl;
+void login()
+{
+
+    Banco_hotel banco(" ");
+    Usuario u;
+    string login_in,senha_in;
+    Retorno *retorno = new Retorno();
+
+    cout << "+------------+" << endl;
+    cout << "|Login:";
+    cin >> login_in;
+    cout << "|Senha:";
+    cin >> senha_in;
+
+    u = banco.buscar_usuario(login_in,senha_in);
+
+    if(!u.empty())
+    {
+        cout << "Ola, " << u.get_nome() << "!"<< endl;
+    }else
+    {
+        cout << "Nao achei ninguem :(" << endl;
+    }
+
     getwchar();
 }
 
@@ -102,7 +130,6 @@ int main()
     bool fim = false;
 
     do{
-
         try
         {
             do{
@@ -117,7 +144,8 @@ int main()
 
                 cin >> opt;
                 getwchar();
-                if (opt > 0 && opt < 4)
+
+                if (opt > 0 && opt < 5)
                     fim = true;
 
             } while (!fim);
@@ -134,7 +162,7 @@ int main()
         }
         catch (char *msg)
         {
-            cout << msg;
+            cout << msg << endl;;
         }
 
     }while(opt != 4);

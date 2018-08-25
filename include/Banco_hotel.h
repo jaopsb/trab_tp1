@@ -17,7 +17,7 @@ class Banco_hotel
         void cadastra_contacorrente(string,int,int);
         void cadastra_cartao(string,Data);
 
-        bool buscar_usuario(Usuario*,string,string);
+        Usuario buscar_usuario(string,string);
     protected:
 
     private:

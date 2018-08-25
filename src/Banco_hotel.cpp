@@ -9,8 +9,11 @@
 
 using namespace std;
 
+using Record = vector<string>;
+using Records = vector<Record>;
+
 //instrucoes para criacao de tabelas do banco
-char *SQL_STMT_CREATE_USUARIO = "CREATE TABLE IF NOT EXISTS 'USUARIO' ( `ID` INTEGER PRIMARY KEY AUTOINCREMENT, `NOME` TEXT NOT NULL, `SENHA` TEXT NOT NULL ); ";
+char *SQL_STMT_CREATE_USUARIO = "CREATE TABLE IF NOT EXISTS 'USUARIO' ( `ID` INTEGER PRIMARY KEY AUTOINCREMENT,`LOGIN` TEXT NOT NULL, `NOME` TEXT NOT NULL, `SENHA` TEXT NOT NULL ); ";
 char *SQL_STMT_CREATE_ACOMODACAO = "CREATE TABLE IF NOT EXISTS `ACOMODACAO` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT, `tipo` INTEGER NOT NULL, `capacidade` INTEGER NOT NULL, `cidade` TEXT NOT NULL, `estado` INTEGER NOT NULL, `diaria` REAL NOT NULL );";
 char *SQL_STMT_CREATE_CARTAO = "CREATE TABLE IF NOT EXISTS 'CARTAO' ( `ID` INTEGER PRIMARY KEY AUTOINCREMENT,`NUMERO` TEXT NOT NULL, `DT_VALIDADE` TEXT NOT NULL, `ID_USUARIO` INTEGER NOT NULL );";
 char *SQL_STMT_CREATE_CONTACORRENTE = "CREATE TABLE IF NOT EXISTS 'CONTACORRENTE' ( `ID` INTEGER PRIMARY KEY AUTOINCREMENT, `NUMERO` TEXT NOT NULL, `AGENDA` INTEGER NOT NULL, `BANCO` INTEGER NOT NULL, `ID_USUARIO` INTEGER NOT NULL );";
@@ -76,11 +79,13 @@ bool Banco_hotel::cadastra_usuario(Usuario usu)
 {
     char *errmsg;
 
-    string SQL_STMT_INSERT_USUARIO = "INSERT INTO USUARIO (nome,senha) VALUES (";
+    string SQL_STMT_INSERT_USUARIO = "INSERT INTO USUARIO (nome,login,senha) VALUES (";
 
     int rc = sqlite3_open(NOME_BD, &bd);
 
     SQL_STMT_INSERT_USUARIO += "'" + usu.get_nome() + "'";
+    SQL_STMT_INSERT_USUARIO += ',';
+    SQL_STMT_INSERT_USUARIO += "'" + usu.get_login() + "'";
     SQL_STMT_INSERT_USUARIO += ',';
     SQL_STMT_INSERT_USUARIO += "'" + usu.get_senha() + "');";
 
@@ -94,13 +99,41 @@ bool Banco_hotel::cadastra_usuario(Usuario usu)
     return rc == 0;
 }
 
-bool Banco_hotel::buscar_usuario(Usuario* u, string nome_in,string senha_in)
+/*
+    Funcao de buscar um usuario;
+    Deve devolver um objeto usuario completo com todos os valores que serao usados no sistema
+*/
+Usuario Banco_hotel::buscar_usuario(string login_in,string senha_in)
 {
-
-    sqlite3* bd;
     char* errmsg;
+    sqlite3_stmt *stmt;
+    string SQL_STMT_SELECT_USUARIO = "SELECT * FROM USUARIO WHERE LOGIN = '" + login_in + "' and SENHA = '" + senha_in + "';";
 
-    return false;
+    sqlite3_open(NOME_BD,&bd);
+
+    //if(sqlite3_exec(bd,SQL_STMT_SELECT_USUARIO.c_str(),busca_usuario_callback,0,&errmsg)) throw errmsg;
+
+    //preparando o statement
+    int rc = sqlite3_prepare_v2(bd, SQL_STMT_SELECT_USUARIO.c_str() , -1, &stmt, NULL);
+
+    //executando comando SQL
+    rc = sqlite3_step(stmt);
+
+    if(!rc)
+    {
+        throw sqlite3_errmsg(bd);
+        sqlite3_finalize(stmt);
+    }
+
+    Usuario u;
+
+    //fazendo cast de const char* do sqlite3 para string
+    u.set_nome (string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1))));
+    u.set_login(string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2))));
+    u.set_senha(string(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3))));
+
+    sqlite3_close(bd);
+    return u;
 }
 
 Banco_hotel::~Banco_hotel()
