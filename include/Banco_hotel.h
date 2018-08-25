@@ -4,6 +4,7 @@
 #include "Data.h"
 #include "sqlite3.h"
 #include "Usuario.h"
+#include "Retorno.h"
 #include "Acomodacao.h"
 
 class Banco_hotel
@@ -12,7 +13,7 @@ class Banco_hotel
         Banco_hotel(char*);
         virtual ~Banco_hotel();
 
-        bool cadastra_usuario(Usuario);
+        Retorno* cadastra_usuario(Usuario);
         void cadastra_acomodacao(Acomodacao);
         void cadastra_contacorrente(string,int,int);
         void cadastra_cartao(string,Data);
@@ -21,9 +22,12 @@ class Banco_hotel
     protected:
 
     private:
-        int instancia;
         sqlite3* bd;
+        int instancia;
+        sqlite3_stmt *stmt;
         char* NOME_BD = "hotel.db";
+
+        bool existe_usuario(string,string);
 };
 
 #endif // BANCO_HOTEL_H

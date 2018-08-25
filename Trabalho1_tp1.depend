@@ -109,7 +109,7 @@
 	"Usuario.h"
 	"Acomodacao.h"
 
-1535157778 source:c:\users\hiarr\desktop\trab_tp1\main.cpp
+1535201298 source:c:\users\hiarr\desktop\trab_tp1\main.cpp
 	<iostream>
 	"Data.h"
 	"Usuario.h"
@@ -122,11 +122,12 @@
 1535069501 c:\users\hiarr\desktop\trab_tp1\include\data.h
 	<string>
 
-1535157508 c:\users\hiarr\desktop\trab_tp1\include\banco_hotel.h
+1535201331 c:\users\hiarr\desktop\trab_tp1\include\banco_hotel.h
 	<string>
 	"Data.h"
 	"sqlite3.h"
 	"Usuario.h"
+	"Retorno.h"
 	"Acomodacao.h"
 
 1535052052 c:\users\hiarr\desktop\trab_tp1\include\acomodacao.h
@@ -136,14 +137,15 @@
 1535050921 source:c:\users\hiarr\desktop\trab_tp1\src\acomodacao.cpp
 	"Acomodacao.h"
 
-1535157864 source:c:\users\hiarr\desktop\trab_tp1\src\banco_hotel.cpp
+1535201812 source:c:\users\hiarr\desktop\trab_tp1\src\banco_hotel.cpp
 	<stdio.h>
 	<iostream>
 	<string>
 	<vector>
 	<sqlite3.h>
-	"Banco_hotel.h"
 	"Usuario.h"
+	"Retorno.h"
+	"Banco_hotel.h"
 	"Acomodacao.h"
 
 1528177886 c:\users\hiarr\desktop\trab_tp1\include\sqlite3.h

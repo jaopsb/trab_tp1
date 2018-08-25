@@ -12,8 +12,8 @@ Retorno *valida_senha(string s)
     int numero = 0;
     int i = 0;
 
-    if (s.length() < 7)
-        return new Retorno(false, "A senha deve conter pelo menos 8 caracteres!");
+    if (s.length() <= 7)
+        return new Retorno(false, "|A senha deve conter pelo menos 8 caracteres!");
 
     while (s[i])
     {
@@ -35,13 +35,13 @@ Retorno *valida_senha(string s)
 
     //fazendo valida��es de haver um n�mero ou maiuscula
     if (maiuscula != 0 && numero == 0)
-        return new Retorno(false, "A senha deve conter pelo menos 1 numero!");
+        return new Retorno(false, "|A senha deve conter pelo menos 1 numero!");
 
     if (maiuscula == 0 && numero != 0)
-        return new Retorno(false, "A senha deve conter pelo menos uma letra maiuscula!");
+        return new Retorno(false, "|A senha deve conter pelo menos uma letra maiuscula!");
 
     if (maiuscula == 0 && numero == 0)
-        return new Retorno(false, "A senha deve conter pelo menos uma letra maiuscula e um numero!");
+        return new Retorno(false, "|A senha deve conter pelo menos uma letra maiuscula e um numero!");
 
     return new Retorno(maiuscula + numero > 0 , "");
 }
@@ -90,8 +90,15 @@ void registrar()
     {
         Usuario u(nome_in, login_in,senha_in);
 
-        if(banco.cadastra_usuario(u))
+        retorno = banco.cadastra_usuario(u);
+
+        if(retorno->get_resultado())
+        {
             cout << "Cadastro feito com sucesso!" << endl;
+        }else
+        {
+            cout << retorno->get_mensagem() << endl;
+        }
     }
 
     delete retorno;
