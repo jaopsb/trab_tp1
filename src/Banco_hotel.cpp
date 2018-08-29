@@ -69,8 +69,11 @@ Banco_hotel::Banco_hotel(char* nome_bd)
     {
         for (int i = 0; i < sql.size(); i++)
         {
-            if(sqlite3_prepare_v2(bd,sql.at(i),-2,&stmt,NULL) == SQLITE_ERROR)
+            sqlite3_prepare_v2(bd,sql.at(i),-2,&stmt,NULL);
+
+            if(sqlite3_step(stmt)== SQLITE_ERROR)
                     throw sqlite3_errmsg(bd);
+
         }
     }
     catch (char *msg)

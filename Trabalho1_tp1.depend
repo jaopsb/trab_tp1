@@ -231,3 +231,125 @@
 	"Retorno.h"
 	<string>
 
+1535302027 source:c:\users\hiarr\documents\projetos\trab_tp1\main.cpp
+	<iostream>
+	"Data.h"
+	"Usuario.h"
+	"Retorno.h"
+	"Banco_hotel.h"
+
+1535302027 c:\users\hiarr\documents\projetos\trab_tp1\include\data.h
+	<string>
+
+1535302027 c:\users\hiarr\documents\projetos\trab_tp1\include\usuario.h
+	<string>
+
+1535302027 c:\users\hiarr\documents\projetos\trab_tp1\include\retorno.h
+	<string>
+	<stdio.h>
+
+1535302027 c:\users\hiarr\documents\projetos\trab_tp1\include\banco_hotel.h
+	<string>
+	"Data.h"
+	"sqlite3.h"
+	"Usuario.h"
+	"Retorno.h"
+	"Acomodacao.h"
+
+1535302027 c:\users\hiarr\documents\projetos\trab_tp1\include\sqlite3.h
+	<stdarg.h>
+
+1535302027 c:\users\hiarr\documents\projetos\trab_tp1\include\acomodacao.h
+	"Data.h"
+	<string>
+
+1535302027 source:c:\users\hiarr\documents\projetos\trab_tp1\src\acomodacao.cpp
+	"Acomodacao.h"
+
+1535302027 source:c:\users\hiarr\documents\projetos\trab_tp1\src\banco_hotel.cpp
+	<stdio.h>
+	<iostream>
+	<string>
+	<vector>
+	<sqlite3.h>
+	"Usuario.h"
+	"Retorno.h"
+	"Banco_hotel.h"
+	"Acomodacao.h"
+
+1535302027 source:c:\users\hiarr\documents\projetos\trab_tp1\src\data.cpp
+	"Data.h"
+	<vector>
+	<string>
+	<iostream>
+
+1535302027 source:c:\users\hiarr\documents\projetos\trab_tp1\src\retorno.cpp
+	"Retorno.h"
+	<string>
+
+1535302027 source:c:\users\hiarr\documents\projetos\trab_tp1\src\sqlite3.c
+	"sqlite3.h"
+	"config.h"
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	"sqlite_tcl.h"
+	"tcl.h"
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<ctype.h>
+	<math.h>
+
+1535302027 source:c:\users\hiarr\documents\projetos\trab_tp1\src\usuario.cpp
+	"Usuario.h"
+	<locale>
+	<stdlib.h>
+	<iostream>
+	<string>
+
