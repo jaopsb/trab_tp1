@@ -1,0 +1,15 @@
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:8: warning: argument 'int' of command @param is not found in the argument list of Agencia::set_agencia(int valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:11: warning: The following parameters of Agencia::set_agencia(int valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:26: warning: unexpected token in comment block while parsing the argument of command param
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:45: warning: unexpected token in comment block while parsing the argument of command param
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:87: warning: argument 'string' of command @param is not found in the argument list of Data::set_data(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:55: warning: The following parameters of Data::set_data(string valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:162: warning: argument 'string' of command @param is not found in the argument list of Data_Validade::set_data_validade(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:66: warning: The following parameters of Data_Validade::set_data_validade(string valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:64: warning: unexpected token in comment block while parsing the argument of command param
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:211: warning: argument 'string' of command @param is not found in the argument list of Estado::set_estado(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:77: warning: The following parameters of Estado::set_estado(string valor) are not documented:
+  parameter 'valor'
