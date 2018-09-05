@@ -1,13 +1,15 @@
 # depslib dependency file v1.0
-1536115144 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\main.cpp
+1536167006 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\main.cpp
 	<iostream>
+	<Testes.h>
 
-1536115092 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\src\dominios.cpp
+1536168238 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\src\dominios.cpp
 	"dominios.h"
 	<stdexcept>
 	<vector>
+	<iostream>
 
-1536115050 c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\include\dominios.h
+1536161460 c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\include\dominios.h
 	<string>
 	<stdexcept>
 
@@ -15,4 +17,13 @@
 	"Entidades.h"
 
 1536107449 c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\include\entidades.h
+
+1536168256 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\src\testes.cpp
+	"Testes.h"
+	"dominios.h"
+	<stdexcept>
+	<iostream>
+
+1536163772 c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\include\testes.h
+	<dominios.h>
 

@@ -7,7 +7,6 @@ using namespace std;
 
 class Agencia {
  public:
-  Agencia();
   void set_agencia(int);
   /**\brief Retorna o valor da agencia*/
   int get_agencia() {return agencia;}
@@ -18,7 +17,6 @@ class Agencia {
 
 class Banco {
  public:
-  Banco();
   void set_banco(int);
   /**\brief Retorna o valor do numero do banco*/
   int get_banco() { return banco;}
@@ -29,7 +27,6 @@ class Banco {
 
 class Capacidade_Acomodacao {
  public:
-  Capacidade_Acomodacao();
   void set_capacidade_acomodacao(int);
   /**\brief Retorna o valor da capacidade de acomodacao*/
   int get_capacidade_acomodacao() {return cap_acom;};
@@ -40,7 +37,6 @@ class Capacidade_Acomodacao {
 
 class Diaria {
  public:
-  Diaria();
   void set_diaria(float);
   /**\brief Retorna o valor da diaria*/
   float get_diaria(){return diaria;};
@@ -51,7 +47,6 @@ class Diaria {
 
 class Data {
  public:
-  Data();
   void set_data(string);
   /**\brief Retorna o valor da data*/
   string get_data() {return data;};
@@ -62,7 +57,6 @@ class Data {
 
 class Data_Validade {
  public:
-  Data_Validade();
   void set_data_validade(string);
   /**\brief Retorna o valor da data de validade*/
   string get_data_validade() {return data_val;};
@@ -73,7 +67,6 @@ class Data_Validade {
 
 class Estado {
  public:
-  Estado();
   void set_estado(string);
   /**\brief Retorna o valor do estado*/
   string get_estado() {return estado;};
@@ -84,7 +77,6 @@ class Estado {
 
 class Identificador {
  public:
-  Identificador();
   void set_identificador(string);
   /**\brief Retorna o valor do identificador*/
   string get_identificador(){return identificador;};
@@ -95,7 +87,6 @@ class Identificador {
 
 class Nome {
  public:
-  Nome();
   void set_nome(string);
   /**\brief Retorna o valor do nome*/
   string get_nome(){return nome;};
@@ -106,7 +97,6 @@ class Nome {
 
 class Numero_Cartao {
  public:
-  Numero_Cartao();
   void set_numero_cartao(string);
   /**\brief Retorna o valor do número do cartão*/
   string get_numero_cartao(){return numero_cartao;};
@@ -117,7 +107,6 @@ class Numero_Cartao {
 
 class Numero_Conta_Corrente {
  public:
-  Numero_Conta_Corrente();
   void set_numero_conta_corrente(string);
   /**\brief Retorna o valor da número da conta corrente*/
   string get_numero_conta_corrente(){return numero_conta_corrente;};
@@ -128,7 +117,6 @@ class Numero_Conta_Corrente {
 
 class Senha {
  public:
-  Senha();
   void set_senha(string);
   /**\brief Retorna o valor da senha*/
   string get_senha(){return senha;};
@@ -139,7 +127,6 @@ class Senha {
 
 class Tipo_Acomodacao {
  public:
-  Tipo_Acomodacao();
   void set_tipo_acomodacao(int);
   /**\brief Retorna o valor do tipo de acomodacao*/
   int get_tipo_acomodacao(){return tipo_acomodacao;};

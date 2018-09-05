@@ -1,6 +1,7 @@
 #include "dominios.h"
 #include <stdexcept>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -103,13 +104,13 @@ void Data::set_data(string valor) {
 
 void Data::validar(string valor) throw(invalid_argument){
   //verifica se os valores estao vazios ou preenchidos com espaco
-  if ( data.empty() || data == " ") throw invalid_argument("Data nao pode ser vazia");
+  if ( valor.empty() || valor == " ") throw invalid_argument("Data nao pode ser vazia");
 
   string buff{""};
   vector<string> v;
 
   /* loop que verifica se ha / e extrai os valoes para um vetor de strings */
-  for (auto n:data) {
+  for (auto n:valor) {
     if (n != '/') {
 
       buff += n;
@@ -290,43 +291,25 @@ void Numero_Cartao::set_numero_cartao(string valor) {
 void Numero_Cartao::validar(string valor) throw(invalid_argument){
 
   int soma = 0;
-  int digitos = 16;
-  int valor_aux[digitos];
+  int nDigits = valor.length();
 
-  for (int i = 0; i < digitos; i++) {
-    valor_aux[i] = valor[i];
-  }
+  bool isSecond = false;
+  for (int i = nDigits - 1; i >= 0; i--) {
 
-  for (int i = 0; i <= (digitos - 1); i++) {
-    valor_aux[i] -= 48;
-  }
+    int d = valor[i] - 'a';
 
-  //dobrando valores para a soma
-  for (int i = 1; i <= digitos; i++) {
-    if (i % 2 == 0) {
-      valor_aux[i-1] =  2 * valor_aux[i-1];
-    } else {
-      valor_aux[i-1] = valor_aux [i-1];
-    }
-  }
+    if ( isSecond == true ) d = d * 2;
 
-  //somando digitos
-  for (int i = 1; i <= digitos; i++) {
-    if (valor_aux[i-1] > 9 && i % 2 == 0) {
-      int mod = valor_aux[i-1] % 10;
-      valor_aux[i-1]  =  1 + mod;
-    } else {
-      valor_aux[i-1] = valor_aux[i-1];
-    }
-  }
+    // We add two digits to handle
+    // cases that make two digits after
+    // doubling
+    soma += d / 10;
+    soma += d % 10;
 
-  // soma
-  for (int i = 0 ; i <= (digitos - 1) ; i ++ ) {
-    soma += valor_aux[i];
+    isSecond = !isSecond;
   }
 
   if (soma % 10 != 0) throw invalid_argument("Numero do cartao invalido");
-
 }
 
 void Numero_Conta_Corrente::set_numero_conta_corrente(string valor) {
@@ -335,7 +318,7 @@ void Numero_Conta_Corrente::set_numero_conta_corrente(string valor) {
   this->numero_conta_corrente = valor;
 }
 
-void Numero_Conta_Corrente::validar(string valor) throw(invalid_argument) {
+void Numero_Conta_Corrente::validar(string valor) throw (invalid_argument) {
   int i = 0;
 
   while ( valor[i] ) {

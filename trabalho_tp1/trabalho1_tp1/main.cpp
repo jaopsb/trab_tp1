@@ -1,12 +1,21 @@
 #include <iostream>
+#include <Testes.h>
 
 using namespace std;
 
 int main()
 {
 
-   string valor = " ";
+  Testes teste;
 
-   cout << int(valor[0]) ;
-    return 0;
+  if (teste.rodar_testes()) {
+
+    cout << "ok" << endl;
+
+  } else {
+
+    cout << "nao ok" << endl;
+  }
+
+  return 0;
 }
