@@ -5,6 +5,12 @@
 
 using namespace std;
 
+/**\brief rodar_testes().Executa todos os testes criados para cada classe.
+ * Nos Dominios, é verificado tanto a inserção de um valor de acordo com a especificação de cada função
+ * como também um valor fora da especificação, verificando se há um erro esperado.
+ * \param void
+ * \return true se todos os testes rodarem corretamente e false se algum der erro
+*/
 bool Testes::rodar_testes() {
 
   bool resultado = true;
@@ -59,12 +65,16 @@ bool Testes::rodar_testes() {
   return resultado;
 }
 
+/**\briefvalidacao de insercao de um valor que confere com a especificação da classe Agencia 
+*/
 void Testes::testa_agencia_ok() {
   Agencia agencia;
 
   agencia.set_agencia(45678);
 }
 
+/**\briefValidação da inserção de um valor que nao corresponde a especificação da classe Agencia
+*/
 void Testes::testa_agencia_erro() throw(invalid_argument){
   bool resultado = false;
   Agencia agencia;

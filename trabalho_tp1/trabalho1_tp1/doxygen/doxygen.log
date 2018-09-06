@@ -1,15 +1,40 @@
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:8: warning: argument 'int' of command @param is not found in the argument list of Agencia::set_agencia(int valor)
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:11: warning: The following parameters of Agencia::set_agencia(int valor) are not documented:
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:9: warning: argument 'int' of command @param is not found in the argument list of Agencia::set_agencia(int valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:10: warning: The following parameters of Agencia::set_agencia(int valor) are not documented:
   parameter 'valor'
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:26: warning: unexpected token in comment block while parsing the argument of command param
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:45: warning: unexpected token in comment block while parsing the argument of command param
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:87: warning: argument 'string' of command @param is not found in the argument list of Data::set_data(string valor)
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:55: warning: The following parameters of Data::set_data(string valor) are not documented:
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:28: warning: argument 'int' of command @param is not found in the argument list of Banco::set_banco(int valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:20: warning: The following parameters of Banco::set_banco(int valor) are not documented:
   parameter 'valor'
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:162: warning: argument 'string' of command @param is not found in the argument list of Data_Validade::set_data_validade(string valor)
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:66: warning: The following parameters of Data_Validade::set_data_validade(string valor) are not documented:
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:46: warning: argument 'int' of command @param is not found in the argument list of Capacidade_Acomodacao::set_capacidade_acomodacao(int valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:30: warning: The following parameters of Capacidade_Acomodacao::set_capacidade_acomodacao(int valor) are not documented:
   parameter 'valor'
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:64: warning: unexpected token in comment block while parsing the argument of command param
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:211: warning: argument 'string' of command @param is not found in the argument list of Estado::set_estado(string valor)
-C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:77: warning: The following parameters of Estado::set_estado(string valor) are not documented:
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:88: warning: argument 'string' of command @param is not found in the argument list of Data::set_data(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:50: warning: The following parameters of Data::set_data(string valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:163: warning: argument 'string' of command @param is not found in the argument list of Data_Validade::set_data_validade(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:60: warning: The following parameters of Data_Validade::set_data_validade(string valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:65: warning: argument 'float' of command @param is not found in the argument list of Diaria::set_diaria(float valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:40: warning: The following parameters of Diaria::set_diaria(float valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:213: warning: argument 'string' of command @param is not found in the argument list of Estado::set_estado(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:70: warning: The following parameters of Estado::set_estado(string valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:243: warning: argument 'string' of command @param is not found in the argument list of Identificador::set_identificador(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:80: warning: The following parameters of Identificador::set_identificador(string valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:281: warning: argument 'string' of command @param is not found in the argument list of Nome::set_nome(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:90: warning: The following parameters of Nome::set_nome(string valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:309: warning: argument 'string' of command @param is not found in the argument list of Numero_Cartao::set_numero_cartao(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:100: warning: The following parameters of Numero_Cartao::set_numero_cartao(string valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:346: warning: argument 'string' of command @param is not found in the argument list of Numero_Conta_Corrente::set_numero_conta_corrente(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:110: warning: The following parameters of Numero_Conta_Corrente::set_numero_conta_corrente(string valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:374: warning: argument 'string' of command @param is not found in the argument list of Senha::set_senha(string valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:120: warning: The following parameters of Senha::set_senha(string valor) are not documented:
+  parameter 'valor'
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:432: warning: argument 'string' of command @param is not found in the argument list of Tipo_Acomodacao::set_tipo_acomodacao(int valor)
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/src/dominios.cpp:440: warning: end of comment block while expecting command </b>
+C:/Users/hiarr/Documents/projetos/trab_tp1/trabalho_tp1/trabalho1_tp1/include/dominios.h:130: warning: The following parameters of Tipo_Acomodacao::set_tipo_acomodacao(int valor) are not documented:
   parameter 'valor'

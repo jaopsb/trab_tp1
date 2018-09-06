@@ -23,17 +23,17 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "trabalho1_tp1", "index.html", [
+  [ "Trabalho1-Tecnicas-de-Programacao-1", "index.html", [
     [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+      [ "Lista de componentes", "annotated.html", "annotated_dup" ],
+      [ "Índice dos componentes", "classes.html", null ],
+      [ "Componentes membro", "functions.html", [
+        [ "Tudo", "functions.html", null ],
+        [ "Funções", "functions_func.html", null ]
       ] ]
     ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+    [ "Ficheiros", "files.html", [
+      [ "Lista de ficheiros", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
@@ -43,5 +43,5 @@ var NAVTREEINDEX =
 "_entidades_8h_source.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'clique para desativar a sincronização do painel';
+var SYNCOFFMSG = 'clique para ativar a sincronização do painel';

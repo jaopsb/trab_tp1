@@ -10,11 +10,11 @@ int main()
 
   if (teste.rodar_testes()) {
 
-    cout << "ok" << endl;
+    cout << "Testes executados com sucesso" << endl;
 
   } else {
 
-    cout << "nao ok" << endl;
+    cout << "Erro nos testes" << endl;
   }
 
   return 0;

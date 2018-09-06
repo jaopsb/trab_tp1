@@ -6,11 +6,12 @@
 using namespace std;
 
 
-/** \brief adiciona o valor da agencia a classe agencia, valor deve ser entre 0 e 99999.
- *
- * \param int valor
+/** \brief adiciona o valor da agencia.
+ * 
+ * Deve ser um numero entre 0 e 99999
+ * \param int 
  * \return void()
- *
+ * \throw invalid_argument
  */
 void Agencia::set_agencia(int valor) {
   Agencia::validar(valor);
@@ -20,16 +21,16 @@ void Agencia::set_agencia(int valor) {
 
 void Agencia::validar(int valor) throw(invalid_argument){
 
-  if (valor >= 100000) throw invalid_argument("O numero da conta nao confere com a especificacao");
+  if ( valor < 0 || valor >= 100000 ) throw invalid_argument("O numero da conta nao confere com a especificacao");
 
 }
 
 /** \brief Adiciona o valor do banco na classe banco.
+ * 
  * Deve ser enviado com o valor entre 0 e 999.
- * \param
- * \param
- * \return
- *
+ * \param int 
+ * \return void
+ * \throw invalid_argument
  */
 void Banco::set_banco(int valor) {
   Banco::validar(valor);
@@ -42,13 +43,12 @@ void Banco::validar(int valor) throw(invalid_argument){
 
 }
 
-
 /** \brief Adiciona o valor correspondente da capacidade de acomodacao.
+ * 
  *  Para ser valido, deve ser entre 1 e 9.
- * \param
- * \param
- * \return
- *
+ * \param int 
+ * \return void
+ * \throw invalid_argument
  */
 void Capacidade_Acomodacao::set_capacidade_acomodacao(int valor) {
   Capacidade_Acomodacao::validar(valor);
@@ -63,11 +63,11 @@ void Capacidade_Acomodacao::validar(int valor) throw(invalid_argument){
 }
 
 /** \brief Adiciona o valor correspondente a diaria.
+ * 
  *  O valor nao pode exceder a quantia de R$ 10000,00 e nem ser menor do que R$ 1,00
- * \param
- * \param
- * \return
- *
+ * \param float 
+ * \return void
+ * \throw invalid_argument
  */
 void Diaria::set_diaria(float valor) {
   Diaria::validar(valor);
@@ -86,13 +86,13 @@ void Diaria::validar(float valor) throw(invalid_argument){
 
 
 /** \brief Adiciona o valor da data a classe Data.
+ * 
  * A data deve ser descrita da forma 'DD/MMM/AAAA', não será valido anos abaixo de 2000 e acima de 2099.
  * Anos bissextos são considedrados, o mes devera ser uma das siglas validas:
  * jan,fev,mar,abr,mai,jun,jul,ago,set,out,nov,dez.
- * \param string valor
- *
+ * \param string 
  * \return void
- *
+ * \throw invalid_argument
  */
 void Data::set_data(string valor) {
 
@@ -161,11 +161,12 @@ void Data::validar(string valor) throw(invalid_argument){
 }
 
 /**\brief Adiciona a data de validade do cartao. Deve ser na forma MM/AA.
+ * 
  * Para o campo MM, é aceito apenas valores de 01 a 12.
  * Para o campo AA os valores devem estar entre 00 e 99.
- *\param string valor
- *
+ *\param string 
  *\return void
+ * \throw invalid_argument
  */
 void Data_Validade::set_data_validade(string valor) {
 
@@ -209,11 +210,13 @@ void Data_Validade::validar(string valor) throw(invalid_argument) {
 }
 
 
-/**\brief Adicinona o estado. Deve ser um dos valores a seguir:
+/**\brief Guarda o valor referente a sigla de um Estado. 
+ * 
+ * Deve ser um dos valores a seguir:
  * AC,AL,AP,AM,BA,CE,DF,ES,GO,MA,MT,MS,MG,PA,PB,PR,PE,PI,RJ,RN,RS,RO,RR,SC,SP,SE,TO
- *\param string valor
- *
+ *\param string 
  *\return void
+ * \throw invalid_argument
  */
 void Estado::set_estado(string valor) {
 
@@ -237,6 +240,14 @@ void Estado::validar(string valor) throw(invalid_argument){
 
 }
 
+/**\brief Funcao de insercao de um valor para o identificador.
+ * 
+ * Deve ser enviado um valor do tipo string que seja nao vazio, com tamanho 5, qualquer outro acarreta em erro.
+ * O valor nao deve conter letras maiusculas nem números ou simbolos
+ * \param string 
+ * \return void
+ * \throw invalid_argument
+*/
 void Identificador::set_identificador(string valor) {
   Identificador::validar(valor);
 
@@ -248,10 +259,13 @@ void Identificador::validar(string valor) throw(invalid_argument){
   int i = 0;
   int minuscula = 0;
 
+  //valida se o valor esta vazio ou com apenas um espaço
   if ( valor.empty() || valor == " ") throw invalid_argument("Identificador nao pode estar vazio");
 
-  if ( valor.length() > 5 ) throw invalid_argument("Identificador nao confere com o tamanho especificado");
+  //valida se o tamanho esta dentro da especificacao dada
+  if ( valor.length() < 5 || valor.length() > 5 ) throw invalid_argument("Identificador nao confere com o tamanho especificado");
 
+  //pesquisa se o valor contem letras minusculas
   while (valor[i]){
 
     if ((isalpha(valor[i])) && (int(valor[i]) >= 97 && int(valor[i]) <= 122)) minuscula++;
@@ -259,10 +273,19 @@ void Identificador::validar(string valor) throw(invalid_argument){
     i++;
   }
 
+  //se todo o documento nao conter apenas minusculas, ha o lancamento de uma excecao
   if( minuscula != 5 ) throw invalid_argument("O identificador deve ser constituido apenas de letras minusculas");
 
 }
 
+/**\brief Insere um valor para o Nome.
+ * 
+ * Não deve ser vazio nem nulo, pode conter letras e números, apenas não pode conter dois espaços seguidos.
+ * 
+ * \param string 
+ * \return void
+ * \throw invalid_argument
+*/
 void Nome::set_nome(string valor) {
   Nome::validar(valor);
 
@@ -273,6 +296,7 @@ void Nome::validar(string valor) throw(invalid_argument){
 
   int i = 0;
 
+  //se existem dois espacos seguidos
   while(valor[i]) {
 
     if ( valor[i] == 32 && valor[i+1] == 32 ) throw invalid_argument("Nao pode haver espaco duplo no nome");
@@ -282,6 +306,14 @@ void Nome::validar(string valor) throw(invalid_argument){
 
 }
 
+/**\brief insere um numero de cartao de credito valido. 
+ * 
+ * Deve ser visto que a validação do dado é feita com base no 
+ * algoritmo de Luhn (<a href="https://en.wikipedia.org/wiki/Luhn_algorithm"> Algoritmo de Luhn</a>)
+ * A Funcao recebe uma string com 16 caracteres, numericos contendo o numero do cartao de credito a ser guardado
+ * \param string 
+ * \throw invalid_argument
+*/
 void Numero_Cartao::set_numero_cartao(string valor) {
   Numero_Cartao::validar(valor);
 
@@ -294,15 +326,14 @@ void Numero_Cartao::validar(string valor) throw(invalid_argument){
   int nDigits = valor.length();
 
   bool isSecond = false;
+
   for (int i = nDigits - 1; i >= 0; i--) {
 
     int d = valor[i] - 'a';
 
     if ( isSecond == true ) d = d * 2;
 
-    // We add two digits to handle
-    // cases that make two digits after
-    // doubling
+    //adicionando 2 digitos para o algoritmo funcionar corretamente
     soma += d / 10;
     soma += d % 10;
 
@@ -312,6 +343,14 @@ void Numero_Cartao::validar(string valor) throw(invalid_argument){
   if (soma % 10 != 0) throw invalid_argument("Numero do cartao invalido");
 }
 
+/**\brief insere o numero da conta corrente
+ * 
+ * Deve ser uma string com apenas numeros, sem letras ou simbolos.
+ * Tem de ter tamanho exato de 6 caracteres
+ * \param string
+ * \return void
+ * \throw invalid_argument
+*/
 void Numero_Conta_Corrente::set_numero_conta_corrente(string valor) {
   Numero_Conta_Corrente::validar(valor);
 
@@ -332,6 +371,18 @@ void Numero_Conta_Corrente::validar(string valor) throw (invalid_argument) {
 
 }
 
+/**\brief Insere uma senha
+ * 
+ * Deve ser seguida as regras da documentacao: <br>
+ * Deve conter pelo menos 8 digitos; <br>
+ * Ter pelo menos uma letra maiuscula; <br>
+ * Ter pelo menos um numero; <br>
+ * Ter pelo menos um simbolo; <br>
+ * 
+ * \param string
+ * \return void
+ * \throw invalid_argument
+*/
 void Senha::set_senha(string valor){
   Senha::validar(valor);
 
@@ -378,15 +429,25 @@ void Senha::validar(string valor) throw(invalid_argument) {
   if (maiuscula == 0 && numero == 0 && simbolo == 0) throw invalid_argument("A senha deve conter pelo menos uma letra maiuscula, um numero e um simbolo!");
 }
 
+/**\brief insere um tipo de acomodacao
+ * 
+ * Para inserir o valor do tipo de acomodacao deve ser: <b>
+ * 1 - Apartamento <br>
+ * 2 - Casa <br>
+ * 3 - Flat <br>
+ * 
+ * \param string
+ * \return void
+ * \throw invvalid_argument
+*/
 void Tipo_Acomodacao::set_tipo_acomodacao(int valor) {
   Tipo_Acomodacao::validar(valor);
 
   this->tipo_acomodacao = valor;
-
 }
 
 void Tipo_Acomodacao::validar(int valor) throw(invalid_argument) {
-
-  if ( valor < 0 || valor > 2 ) throw invalid_argument("Tipo de acomodacao invalido");
+  //soh pode ser 1 ,2 ou 3
+  if ( valor < 0 || valor > 3 ) throw invalid_argument("Tipo de acomodacao invalido");
 
 }

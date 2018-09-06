@@ -98,7 +98,7 @@ class Nome {
 class Numero_Cartao {
  public:
   void set_numero_cartao(string);
-  /**\brief Retorna o valor do número do cartão*/
+  /**\brief Retorna o valor do numero do cartao*/
   string get_numero_cartao(){return numero_cartao;};
  private:
   string numero_cartao;
@@ -108,7 +108,7 @@ class Numero_Cartao {
 class Numero_Conta_Corrente {
  public:
   void set_numero_conta_corrente(string);
-  /**\brief Retorna o valor da número da conta corrente*/
+  /**\brief Retorna o valor da numero da conta corrente*/
   string get_numero_conta_corrente(){return numero_conta_corrente;};
  private:
   string numero_conta_corrente;
