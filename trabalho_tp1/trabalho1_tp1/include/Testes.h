@@ -1,41 +1,130 @@
-#ifndef TESTES_H
-#define TESTES_H
-
+#ifndef Teste_H
+#define Teste_H
+#include <iostream>
 #include <dominios.h>
 
-class Testes {
+using namespace std;
+
+class Teste {
  public:
-  bool rodar_testes();
- private:
-  //testes com insercao correspondente a especificacao
-  void testa_agencia_ok();
-  void testa_banco_ok();
-  void testa_capacidade_acomodacao_ok();
-  void testa_data_ok();
-  void testa_data_validade_ok();
-  void testa_diaria_ok();
-  void testa_estado_ok();
-  void testa_identificador_ok();
-  void testa_nome_ok();
-  void testa_numero_cartao_ok();
-  void testa_numero_conta_corrente_ok();
-  void testa_senha_ok();
-  void testa_tipo_acomodacao_ok();
- 
-  //testes de insercao com valores que nao correspondem a especificacao
-  void testa_agencia_erro() throw(invalid_argument);
-  void testa_banco_erro() throw(invalid_argument);
-  void testa_capacidade_acomodacao_erro() throw(invalid_argument);
-  void testa_data_erro() throw(invalid_argument);
-  void testa_data_validade_erro() throw(invalid_argument);
-  void testa_diaria_erro() throw(invalid_argument);
-  void testa_estado_erro() throw(invalid_argument);
-  void testa_identificador_erro() throw(invalid_argument);
-  void testa_nome_erro() throw(invalid_argument);
-  void testa_numero_cartao_erro() throw(invalid_argument);
-  void testa_numero_conta_corrente_erro() throw(invalid_argument);
-  void testa_senha_erro() throw(invalid_argument);
-  void testa_tipo_acomodacao_erro() throw(invalid_argument);
+  void temp_teste(string nome_func, void(*f)(void)); 
 };
 
-#endif // TESTES_H
+class Teste_Agencia : public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_agencia_ok();
+  static void testa_agencia_erro() throw(invalid_argument);
+};
+
+class Teste_Banco :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_banco_ok();
+  static void testa_banco_erro() throw(invalid_argument);
+};
+
+class Teste_Capacidade_Acomodacao :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_capacidade_acomodacao_ok();
+  static void testa_capacidade_acomodacao_erro() throw(invalid_argument);
+};
+
+class Teste_Diaria :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_diaria_ok();
+  static void testa_diaria_erro() throw(invalid_argument);
+};
+
+class Teste_Data :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_data_ok();
+  static void testa_data_erro() throw(invalid_argument);
+};
+
+class Teste_Data_Validade :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_data_validade_ok();
+  static void testa_data_validade_erro() throw(invalid_argument);
+};
+
+class Teste_Estado :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_estado_ok();
+  static void testa_estado_erro() throw(invalid_argument);
+};
+
+class Teste_Identificador :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+   static void testa_identificador_ok();
+  static void testa_identificador_erro() throw(invalid_argument);
+};
+
+class Teste_Nome :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_nome_ok();
+  static void testa_nome_erro() throw(invalid_argument);
+};
+
+class Teste_Numero_Cartao :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_numero_cartao_ok();
+  static void testa_numero_cartao_erro() throw(invalid_argument);
+};
+
+class Teste_Numero_Conta_Corrente :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_numero_conta_corrente_ok();
+  static void testa_numero_conta_corrente_erro() throw(invalid_argument);
+};
+
+class Teste_Senha :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_senha_ok();
+  static void testa_senha_erro() throw(invalid_argument);
+};
+
+class Teste_Tipo_Acomodacao :public Teste {
+ public:
+  bool rodar_suite();
+ private:
+  bool resultado;
+  static void testa_tipo_acomodacao_ok();
+  static void testa_tipo_acomodacao_erro() throw(invalid_argument);
+};
+
+#endif // Teste_H

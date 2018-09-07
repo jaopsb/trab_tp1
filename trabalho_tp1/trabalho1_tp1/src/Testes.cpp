@@ -5,56 +5,33 @@
 
 using namespace std;
 
-/**\brief rodar_testes().Executa todos os testes criados para cada classe.
+void Teste::temp_teste(string nome_func, void(*f)(void)) {
+  try {
+
+    cout << "Teste " << nome_func;
+    (*f)();
+    cout << " - OK" << endl;
+
+  } catch(const invalid_argument& ia) {
+    cout << "Erro ao realizar o teste "<< nome_func << ": " << ia.what() << endl;
+  }
+}
+
+/******* SUITES DE TESTES *******/
+
+/**\brief rodar_suite().Executa todos os Teste criados para cada classe.
+ * 
  * Nos Dominios, é verificado tanto a inserção de um valor de acordo com a especificação de cada função
  * como também um valor fora da especificação, verificando se há um erro esperado.
  * \param void
- * \return true se todos os testes rodarem corretamente e false se algum der erro
+ * \return true se todos os Teste rodarem corretamente e false se algum der erro
 */
-bool Testes::rodar_testes() {
-
-  bool resultado = true;
+bool Teste_Agencia::rodar_suite() {
 
   try {
 
-    testa_agencia_ok();
-    testa_agencia_erro();
-
-    testa_banco_ok();
-    testa_banco_erro();
-
-    testa_capacidade_acomodacao_ok();
-    testa_capacidade_acomodacao_erro();
-
-    testa_diaria_ok();
-    testa_diaria_erro();
-
-    testa_data_ok();
-    testa_data_erro();
-
-    testa_data_validade_ok();
-    testa_data_validade_erro();
-
-    testa_estado_ok();
-    testa_estado_erro();
-
-    testa_identificador_ok();
-    testa_identificador_erro();
-
-    testa_nome_ok();
-    testa_nome_erro();
-
-    testa_numero_cartao_ok();
-    testa_numero_cartao_erro();
-
-    testa_numero_conta_corrente_ok();
-    testa_numero_conta_corrente_erro();
-
-    testa_senha_ok();
-    testa_senha_erro();
-
-    testa_tipo_acomodacao_ok();
-    testa_tipo_acomodacao_erro();
+    temp_teste("Insere agencia com sucesso",testa_agencia_ok);
+    temp_teste("Insere agencia com erro",testa_agencia_erro);
 
   } catch( const invalid_argument& ia) {
 
@@ -65,9 +42,204 @@ bool Testes::rodar_testes() {
   return resultado;
 }
 
-/**\briefvalidacao de insercao de um valor que confere com a especificação da classe Agencia 
+bool Teste_Banco::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere banco com sucesso",testa_banco_ok);
+    temp_teste("Insere banco com erro",testa_banco_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Capacidade_Acomodacao::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere capacidade de acomodacao com sucesso",testa_capacidade_acomodacao_ok);
+    temp_teste("Insere capacidade de acomodacao com erro",testa_capacidade_acomodacao_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Data::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere data com sucesso",testa_data_ok);
+    temp_teste("Insere data com erro",testa_data_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Data_Validade::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere data validade com sucesso",testa_data_validade_ok);
+    temp_teste("Insere data validade com erro",testa_data_validade_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Diaria::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere diaria com sucesso",testa_diaria_ok);
+    temp_teste("Insere diaria com erro",testa_diaria_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Estado::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere estado com sucesso",testa_estado_ok);
+    temp_teste("Insere estado com erro",testa_estado_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Identificador::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere identificador com sucesso",testa_identificador_ok);
+    temp_teste("Insere identificador com erro",testa_identificador_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Nome::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere nome com sucesso",testa_nome_ok);
+    temp_teste("Insere nome com erro",testa_nome_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Numero_Cartao::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere numero cartao com sucesso",testa_numero_cartao_ok);
+    temp_teste("Insere numero cartao com erro",testa_numero_cartao_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Numero_Conta_Corrente::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere numero conta corrente com sucesso",testa_numero_conta_corrente_ok);
+    temp_teste("Insere numero conta corrente com erro",testa_numero_conta_corrente_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Senha::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere senha com sucesso",testa_senha_ok);
+    temp_teste("Insere senha com erro",testa_senha_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+bool Teste_Tipo_Acomodacao::rodar_suite() {
+
+  try {
+
+    temp_teste("Insere tipo de acomodacao com sucesso",testa_tipo_acomodacao_ok);
+    temp_teste("Insere tipo de acomodacao com erro",testa_tipo_acomodacao_erro);
+
+  } catch( const invalid_argument& ia) {
+
+    cout << ia.what() << endl;
+    resultado = false;
+  }
+
+  return resultado;
+}
+
+
+/******** TESTES DE SUCESSO E ERRO UNITARIOS *********/
+
+/**\briefvalidacao de insercao de um valor que confere com a especificação da classe Agencia
 */
-void Testes::testa_agencia_ok() {
+void Teste_Agencia::testa_agencia_ok() {
   Agencia agencia;
 
   agencia.set_agencia(45678);
@@ -75,7 +247,7 @@ void Testes::testa_agencia_ok() {
 
 /**\briefValidação da inserção de um valor que nao corresponde a especificação da classe Agencia
 */
-void Testes::testa_agencia_erro() throw(invalid_argument){
+void Teste_Agencia::testa_agencia_erro() throw(invalid_argument){
   bool resultado = false;
   Agencia agencia;
 
@@ -92,13 +264,13 @@ void Testes::testa_agencia_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_banco_ok() {
+void Teste_Banco::testa_banco_ok() {
   Banco banco;
 
   banco.set_banco(260);
 }
 
-void Testes::testa_banco_erro() throw(invalid_argument){
+void Teste_Banco::testa_banco_erro() throw(invalid_argument){
   bool resultado = false;
   Banco banco;
 
@@ -117,13 +289,13 @@ void Testes::testa_banco_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_capacidade_acomodacao_ok() {
+void Teste_Capacidade_Acomodacao::testa_capacidade_acomodacao_ok() {
   Capacidade_Acomodacao capacidade_acomodacao;
 
   capacidade_acomodacao.set_capacidade_acomodacao(7);
 }
 
-void Testes::testa_capacidade_acomodacao_erro() throw(invalid_argument){
+void Teste_Capacidade_Acomodacao::testa_capacidade_acomodacao_erro() throw(invalid_argument){
   bool resultado = false;
   Capacidade_Acomodacao capacidade_acomodacao;
 
@@ -142,13 +314,13 @@ void Testes::testa_capacidade_acomodacao_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_diaria_ok() {
+void Teste_Diaria::testa_diaria_ok() {
   Diaria diaria;
 
   diaria.set_diaria(723.44);
 }
 
-void Testes::testa_diaria_erro() throw(invalid_argument){
+void Teste_Diaria::testa_diaria_erro() throw(invalid_argument){
   bool resultado = false;
   Diaria diaria;
 
@@ -167,13 +339,13 @@ void Testes::testa_diaria_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_data_ok() {
+void Teste_Data::testa_data_ok() {
   Data data;
 
   data.set_data("11/set/2001");
 }
 
-void Testes::testa_data_erro() throw(invalid_argument){
+void Teste_Data::testa_data_erro() throw(invalid_argument){
   bool resultado = false;
   Data data;
 
@@ -192,13 +364,13 @@ void Testes::testa_data_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_data_validade_ok() {
+void Teste_Data_Validade::testa_data_validade_ok() {
   Data_Validade data_validade;
 
   data_validade.set_data_validade("12/44");
 }
 
-void Testes::testa_data_validade_erro() throw(invalid_argument){
+void Teste_Data_Validade::testa_data_validade_erro() throw(invalid_argument){
   bool resultado = false;
   Data_Validade data_validade;
 
@@ -217,19 +389,19 @@ void Testes::testa_data_validade_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_estado_ok() {
+void Teste_Estado::testa_estado_ok() {
   Estado estado;
 
   estado.set_estado("DF");
 }
 
-void Testes::testa_estado_erro() throw(invalid_argument){
+void Teste_Estado::testa_estado_erro() throw(invalid_argument){
   bool resultado = false;
   Estado estado;
 
   try {
 
-  estado.set_estado("DH");
+    estado.set_estado("DH");
 
   } catch(const invalid_argument& ia) {
     resultado = true;
@@ -242,19 +414,19 @@ void Testes::testa_estado_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_identificador_ok() {
+void Teste_Identificador::testa_identificador_ok() {
   Identificador identificador;
 
   identificador.set_identificador("ideok");
 }
 
-void Testes::testa_identificador_erro() throw(invalid_argument){
+void Teste_Identificador::testa_identificador_erro() throw(invalid_argument){
   bool resultado = false;
   Identificador identificador;
 
   try {
 
-  identificador.set_identificador("ADUAHDUAHDUAH");
+    identificador.set_identificador("ADUAHDUAHDUAH");
 
   } catch(const invalid_argument& ia) {
     resultado = true;
@@ -267,18 +439,18 @@ void Testes::testa_identificador_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_nome_ok() {
+void Teste_Nome::testa_nome_ok() {
   Nome nome;
   nome.set_nome("João Pedro");
 }
 
-void Testes::testa_nome_erro() throw(invalid_argument){
+void Teste_Nome::testa_nome_erro() throw(invalid_argument){
   bool resultado = false;
   Nome nome;
 
   try {
 
-  nome.set_nome("JIAIDSJ  eodmemde");
+    nome.set_nome("JIAIDSJ  eodmemde");
 
   } catch(const invalid_argument& ia) {
     resultado = true;
@@ -291,19 +463,19 @@ void Testes::testa_nome_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_numero_cartao_ok() {
+void Teste_Numero_Cartao::testa_numero_cartao_ok() {
   Numero_Cartao numero_cartao;
 
   numero_cartao.set_numero_cartao("5162205644883793");
 }
 
-void Testes::testa_numero_cartao_erro() throw(invalid_argument){
+void Teste_Numero_Cartao::testa_numero_cartao_erro() throw(invalid_argument){
   bool resultado = false;
   Numero_Cartao numero_cartao;
 
   try {
 
-  numero_cartao.set_numero_cartao("77876554");
+    numero_cartao.set_numero_cartao("77876554");
 
   } catch(const invalid_argument& ia) {
     resultado = true;
@@ -316,19 +488,19 @@ void Testes::testa_numero_cartao_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_numero_conta_corrente_ok() {
+void Teste_Numero_Conta_Corrente::testa_numero_conta_corrente_ok() {
   Numero_Conta_Corrente numero_conta_corrente;
 
   numero_conta_corrente.set_numero_conta_corrente("003962");
 }
 
-void Testes::testa_numero_conta_corrente_erro() throw(invalid_argument){
+void Teste_Numero_Conta_Corrente::testa_numero_conta_corrente_erro() throw(invalid_argument){
   bool resultado = false;
   Numero_Conta_Corrente numero_conta_corrente;
 
   try {
 
-  numero_conta_corrente.set_numero_conta_corrente("103183812031");
+    numero_conta_corrente.set_numero_conta_corrente("103183812031");
 
   } catch(const invalid_argument& ia) {
     resultado = true;
@@ -341,19 +513,19 @@ void Testes::testa_numero_conta_corrente_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_senha_ok() {
+void Teste_Senha::testa_senha_ok() {
   Senha senha;
 
   senha.set_senha("Senha123!");
 }
 
-void Testes::testa_senha_erro() throw(invalid_argument){
+void Teste_Senha::testa_senha_erro() throw(invalid_argument){
   bool resultado = false;
   Senha senha;
 
   try {
 
-  senha.set_senha("sndjsndheuhdue");
+    senha.set_senha("sndjsndheuhdue");
 
   } catch(const invalid_argument& ia) {
     resultado = true;
@@ -366,19 +538,19 @@ void Testes::testa_senha_erro() throw(invalid_argument){
   }
 }
 
-void Testes::testa_tipo_acomodacao_ok() {
+void Teste_Tipo_Acomodacao::testa_tipo_acomodacao_ok() {
   Tipo_Acomodacao tipo_acomodacao;
 
   tipo_acomodacao.set_tipo_acomodacao(1);
 }
 
-void Testes::testa_tipo_acomodacao_erro() throw(invalid_argument){
+void Teste_Tipo_Acomodacao::testa_tipo_acomodacao_erro() throw(invalid_argument){
   bool resultado = false;
   Tipo_Acomodacao tipo_acomodacao;
 
   try {
 
-  tipo_acomodacao.set_tipo_acomodacao(5);
+    tipo_acomodacao.set_tipo_acomodacao(5);
 
   } catch(const invalid_argument& ia) {
     resultado = true;

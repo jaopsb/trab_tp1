@@ -1,29 +1,32 @@
 # depslib dependency file v1.0
-1536167006 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\main.cpp
+1536262740 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\main.cpp
 	<iostream>
 	<Testes.h>
+	<Entidades.h>
 
-1536168238 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\src\dominios.cpp
+1536190585 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\src\dominios.cpp
 	"dominios.h"
 	<stdexcept>
 	<vector>
 	<iostream>
 
-1536161460 c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\include\dominios.h
+1536190384 c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\include\dominios.h
 	<string>
 	<stdexcept>
 
-1536107449 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\src\entidades.cpp
+1536240683 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\src\entidades.cpp
 	"Entidades.h"
 
-1536107449 c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\include\entidades.h
+1536241686 c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\include\entidades.h
+	<dominios.h>
 
-1536168256 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\src\testes.cpp
+1536264662 source:c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\src\testes.cpp
 	"Testes.h"
 	"dominios.h"
 	<stdexcept>
 	<iostream>
 
-1536163772 c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\include\testes.h
+1536263430 c:\users\hiarr\documents\projetos\trab_tp1\trabalho_tp1\trabalho1_tp1\include\testes.h
+	<iostream>
 	<dominios.h>
 
