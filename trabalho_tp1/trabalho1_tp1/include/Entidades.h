@@ -2,8 +2,9 @@
 #define ENTIDADES_H
 #include <dominios.h>
 
-class Usuario {
- public:
+class Usuario
+{
+public:
   void set_nome(string);
   string get_nome() { return nome.get_nome(); };
 
@@ -12,14 +13,16 @@ class Usuario {
 
   void set_senha(string);
   string get_senha() { return senha.get_senha(); };
- private:
+
+private:
   Nome nome;
   Identificador identificador; //PK
   Senha senha;
 };
 
-class Acomodacao {
- public:
+class Acomodacao
+{
+public:
   void set_capacidade(int);
   int get_capacidade() { return capacidade.get_capacidade_acomodacao(); };
 
@@ -43,7 +46,8 @@ class Acomodacao {
 
   void set_tipo(int);
   int get_tipo() { return tipo.get_tipo_acomodacao(); };
- private:
+
+private:
   Identificador identificador;
   Tipo_Acomodacao tipo;
   Capacidade_Acomodacao capacidade;
@@ -54,20 +58,23 @@ class Acomodacao {
   Diaria diaria;
 };
 
-class Cartao_de_Credito {
- public:
+class Cartao_de_Credito
+{
+public:
   void set_numero(string);
   string get_numero() { return numero.get_numero_cartao(); };
 
   void set_data_validade(string);
   string get_data_validade() { return data_validade.get_data_validade(); }
- private:
+
+private:
   Numero_Cartao numero;
   Data_Validade data_validade;
 };
 
-class Conta_corrente {
- public:
+class Conta_corrente
+{
+public:
   void set_agencia(int);
   int get_agencia() { return agencia.get_agencia(); };
 
@@ -76,7 +83,8 @@ class Conta_corrente {
 
   void set_numero(string);
   string get_numero() { return numero.get_numero_conta_corrente(); };
- private:
+
+private:
   Numero_Conta_Corrente numero;
   Agencia agencia;
   Banco banco;
